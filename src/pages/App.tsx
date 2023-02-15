@@ -10,6 +10,7 @@ function App() {
   const [selecionado, setSelecionado] = useState<ITarefa>();
 
   function selecionaTarefa(tarefaSelecionada: ITarefa) {
+
     setSelecionado(tarefaSelecionada);
     setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
       ...tarefa,
@@ -23,7 +24,7 @@ function App() {
       <Lista
        tarefas ={tarefas}
        selecionaTarefa={selecionaTarefa} />
-      <Cronometro />
+      <Cronometro selecionado={selecionado}/>
     </div>
   );
 }
